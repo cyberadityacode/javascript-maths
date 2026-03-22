@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 5 Canvas Fundamentals</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+        
+
+        // Task 1- Draw Diagonal Line
+        ctx.beginPath();
+        ctx.moveTo(0,0); //starting point x,y
+        ctx.lineTo(300,300); //ending point x,y
+
+        // // ctx.moveTo(0,0);
+        // ctx.lineTo(300,100);
+        // ctx.lineTo(0,0);
+
+        ctx.strokeStyle = "red";
+        ctx.stroke();
+    </script>
+</body>
+</html>
