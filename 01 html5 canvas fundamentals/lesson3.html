@@ -25,7 +25,13 @@
             ctx.beginPath();
             ctx.moveTo(0,0);
 
-            for(let i =0; i<= Math.PI *2+1; i+=0.1){
+            // for(let i =0; i<= Math.PI *2+1; i+=Math.PI /20){
+            // for(let i =0; i<= Math.PI *2; i+=Math.PI /2){ // square
+            // for(let i =0; i<= Math.PI *2; i+=Math.PI /4){ // octagon
+            for(let i =0; i<= Math.PI *2; i+=Math.PI /1.5){ // triangle
+
+
+
                 let x = 100+Math.cos(i) * radius;
                 let y = 100+Math.sin(i) * radius;
                 ctx.lineTo(x,y);
