@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>draw circle trignometory</title>
+    <script>
+        function main(){
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.canvas.height =300;
+            ctx.canvas.width = 300;
+
+            ctx.beginPath();
+            ctx.moveTo(0,0);
+            ctx.lineTo(300,150);
+            ctx.stroke();
+
+            drawPolygon(100);
+        }
+
+        function drawPolygon(radius){
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.moveTo(0,0);
+
+            for(let i =0; i<= Math.PI *2+1; i+=0.1){
+                let x = 100+Math.cos(i) * radius;
+                let y = 100+Math.sin(i) * radius;
+                ctx.lineTo(x,y);
+            }
+            ctx.stroke();
+        }
+        
+    </script>  
+</head>
+<body onload="main()">
+    <canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000;">
+        Browser does not support canvas
+    </canvas>
+
+</body>
+</html>
