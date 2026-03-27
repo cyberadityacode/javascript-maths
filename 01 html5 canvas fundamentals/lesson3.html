@@ -16,19 +16,26 @@
             ctx.lineTo(300,150);
             ctx.stroke();
 
-            drawPolygon(100);
+            // drawPolygon(100, 3);
+            drawPolygon(100, 4);
+            drawPolygon(100, 8);
+           
+
+
         }
 
-        function drawPolygon(radius){
+        function drawPolygon(radius, sides){
             let c = document.getElementById("myCanvas");
             let ctx = c.getContext("2d");
             ctx.beginPath();
             ctx.moveTo(0,0);
-
+            sides/=2;
             // for(let i =0; i<= Math.PI *2+1; i+=Math.PI /20){
             // for(let i =0; i<= Math.PI *2; i+=Math.PI /2){ // square
             // for(let i =0; i<= Math.PI *2; i+=Math.PI /4){ // octagon
-            for(let i =0; i<= Math.PI *2; i+=Math.PI /1.5){ // triangle
+            // for(let i =0; i<= Math.PI *2; i+=Math.PI /1.5){ // triangle
+            for(let i =0; i<= Math.PI *2; i+=Math.PI /sides){ // triangle
+
 
 
 
