@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revision</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000;">
+        Browser does not support canvas
+    </canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+        ctx.strokeStyle = "red";
+
+        // diagonal line - top left to bottom right
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(300,300);
+        ctx.stroke();
+
+        // diagonal line - bottom left to top right
+        ctx.moveTo(0,300);
+        ctx.lineTo(300,0);
+        ctx.stroke();
+
+        
+        
+        
+    </script>  
+</body>
+</html>
