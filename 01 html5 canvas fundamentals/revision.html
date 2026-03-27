@@ -29,11 +29,18 @@
         ctx.moveTo(0,150);
         ctx.lineTo(300,150);
         ctx.stroke();
-        
+
         // vertical line - straight line
         ctx.moveTo(150,0);
         ctx.lineTo(150,300);
         ctx.stroke();
+
+
+        // Draw a circle using arc
+        ctx.beginPath();
+        ctx.arc(150, 150, 50, 0, Math.PI * 2); //x,y,radius, startAngle, endAngle
+        ctx.fillStyle = "black";
+        ctx.fill();
         
     </script>  
 </body>
