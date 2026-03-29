@@ -70,9 +70,18 @@ function move(){
     }
 
 }
-
+/* // costly function
 setInterval(()=>{
     ctx.clearRect(0,0,canvas.clientWidth,canvas.clientHeight);
     move();
     drawBall(x,y,20);
-},1000/60);
+},1000/60); */
+
+function mainLoop(){
+    ctx.clearRect(0,0,canvas.clientWidth,canvas.clientHeight);
+    move();
+    drawBall(x,y,20);
+    requestAnimationFrame(mainLoop);
+}
+requestAnimationFrame(mainLoop);
+
