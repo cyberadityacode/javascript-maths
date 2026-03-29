@@ -2,20 +2,29 @@ console.log("lesson 3");
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-let x = 100;
-let y = 100;
 
 let LEFT,RIGHT,UP,DOWN;
 
-function drawBall(x,y,r){
-    ctx.beginPath();
-    ctx.arc(x,y,r,0,Math.PI*2);
-    ctx.strokeStyle = "black";
-    ctx.stroke();
-    ctx.fillStyle = "red";
-    ctx.fill();
-    
+class Ball{
+    constructor(x,y,r){
+        this.x = x;
+        this.y= y;
+        this.r = r;
+    }
+
+    drawBall() {
+        ctx.beginPath();
+        ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
+        ctx.strokeStyle = "black";
+        ctx.stroke();
+        ctx.fillStyle = "red";
+        ctx.fill(); 
+    }
+
+
 }
+
+
 
 canvas.addEventListener("keydown", function(e){
     if(e.key === "ArrowRight"){
@@ -57,25 +66,35 @@ canvas.addEventListener("keyup", function(e){
 
 function move(){
     if(LEFT){
-        x--;
+        // Ball1.x--;
+        Ball2.x--; //control 2nd ball
     }
     if(RIGHT){
-        x++;
+        // Ball1.x++;
+        Ball2.x++; //control 2nd ball
     }
     if(UP){
-        y--;
+        // Ball1.y--;
+        Ball2.y--; //control 2nd ball
     }
     if(DOWN){
-        y++;
+        // Ball1.y++;
+        Ball2.y++; //control 2nd ball
     }
 }
 
 function mainLoop(){
     ctx.clearRect(0,0,canvas.clientWidth, canvas.clientHeight);
     move();
-    drawBall(x,y,20);
+    // drawBall(x,y,r);
+    Ball1.drawBall();
+    Ball2.drawBall();
     requestAnimationFrame(mainLoop);
 }
 
+let Ball1 = new Ball(200,200,30);
 
+// lets create another ball
+
+let Ball2 = new Ball(100,100,20);
 requestAnimationFrame(mainLoop);
