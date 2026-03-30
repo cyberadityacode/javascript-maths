@@ -42,6 +42,20 @@ function move(ball){
     if(RIGHT) ball.x++;
     if(UP) ball.y--;
     if(DOWN) ball.y++;
+
+    // boundary check or constraints
+    if(ball.x - ball.r < 0){
+        ball.x = ball.r; //left edge
+    }
+    if(ball.x + ball.r > canvas.width){
+        ball.x = canvas.width - ball.r;
+    }
+    if(ball.y - ball.r < 0 ){
+        ball.y = ball.r; // top edge
+    }
+    if(ball.y + ball.r > canvas.height){
+        ball.y = canvas.height - ball.r; // bottom edge
+    }
 }
 
 function mainLoop(){
