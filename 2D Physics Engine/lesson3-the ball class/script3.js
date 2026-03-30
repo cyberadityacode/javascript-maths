@@ -4,6 +4,7 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 let LEFT = false, RIGHT = false, UP = false, DOWN = false;
+let SPEED = 10;
 
 class Ball{
     constructor(x,y,r){
@@ -38,14 +39,15 @@ document.addEventListener("keyup", function(e){
 
 // Movement
 function move(ball){
-    if(LEFT) ball.x--;
-    if(RIGHT) ball.x++;
-    if(UP) ball.y--;
-    if(DOWN) ball.y++;
+    if(LEFT) ball.x -= SPEED;
+    if(RIGHT) ball.x += SPEED;
+    if(UP) ball.y -= SPEED;
+    if(DOWN) ball.y += SPEED;
 
     // boundary check or constraints
     if(ball.x - ball.r < 0){
         ball.x = ball.r; //left edge
+        console.log("left edge limit reached");
     }
     if(ball.x + ball.r > canvas.width){
         ball.x = canvas.width - ball.r;
